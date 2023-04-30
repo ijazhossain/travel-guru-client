@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Login.css'
+import { AuthContext } from '../../../providers/AuthProvider';
 const Login = () => {
+    /* const {  } = useContext(AuthContext)
+    console.log(user); */
     return (
         <div className='mx-auto w-50 '>
             <h1 className='text-center'>Login</h1>
