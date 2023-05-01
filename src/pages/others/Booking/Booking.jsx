@@ -1,9 +1,9 @@
 import React from 'react';
-import './Booking.css'
+
 const Booking = () => {
     return (
         <div>
-            <h1>This is booking page</h1>
+            <h1>This is booking</h1>
         </div>
     );
 };

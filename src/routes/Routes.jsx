@@ -6,6 +6,7 @@ import LoginLayout from "../layouts/LoginLayout";
 import Login from "../pages/others/Login/Login";
 import Register from "../pages/others/Register/Register";
 import Rooms from "../pages/others/Rooms/Rooms/Rooms";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -55,7 +56,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/rooms',
-                element: <Rooms></Rooms>
+                element: <PrivateRoute><Rooms></Rooms></PrivateRoute>,
+                loader: () => fetch('https://travel-guru-server-ijazhossain.vercel.app/rooms')
             }
         ]
     }

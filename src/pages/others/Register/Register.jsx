@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import './Register.css'
 import { AuthContext } from '../../../providers/AuthProvider';
 import { sendEmailVerification, updateProfile } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 const Register = () => {
     const { user, createUser } = useContext(AuthContext)
     const [error, setError] = useState('')
@@ -54,10 +55,14 @@ const Register = () => {
                 <input className='d- w-100' type="password" name="password" id="password" />
                 <label htmlFor="confirmPassword">Confirm password</label>
                 <input className='d- w-100' type="password" name="confirmPassword" id="confirmPassword" required />
+                <p>Already have an account?
+                    <Link to="/login">Login</Link>
+                </p>
                 <input className='text-center w-100 mt-3 bg-primary' type="submit" value="submit" />
-                <p className='text-danger fs-5 fw-semibold mt-2'>{error}</p>
-                <p className='text-success fs-5 fw-semibold mt-2'>{success}</p>
+
             </form>
+            <p className='text-danger fs-5 fw-semibold mt-2'>{error}</p>
+            <p className='text-success fs-5 fw-semibold mt-2'>{success}</p>
         </div>
     );
 };
